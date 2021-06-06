@@ -2,7 +2,7 @@
 
 Is to practice reactjs, through building an app to view popular github repos through one week ago [github public search api](https://api.github.com/search/repositories?q=created:%3E2017-01-10&sort=stars&order=desc)
 
-### Visit App Homepage [Here](https://ki-repo/.github.io//github-popular-repos/)
+### Visit App Homepage [Here](https://ki-repo.github.io/github-popular-repos/)
 
 ### Planned items:
 
