@@ -9,6 +9,7 @@ import {
 import { GlobalStyle, MainAppSt } from './App.css';
 import Header from './shared/components/Header/Header';
 
+// Lazy loaded Pages , this can be moved along with routing to do better dynamic importing.
 const PopularReposPage = React.lazy(
   () => import('./containers/PopularRepos/PopularRepos')
 );

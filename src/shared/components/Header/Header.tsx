@@ -6,6 +6,10 @@ import {
   PageHeader,
 } from './Header.css';
 import { useRouteMatch } from 'react-router-dom';
+
+/**
+ * This component is used as a header element for the app to navigate between pages
+ */
 const Header = (): ReactElement => {
   const isPopularRotute = useRouteMatch({
     path: '/popular',

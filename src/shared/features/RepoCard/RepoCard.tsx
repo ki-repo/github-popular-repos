@@ -12,6 +12,9 @@ interface RepoCardProps extends RepoInfo {
   hasStarSupport?: boolean;
   onStarClicked?: Function;
 }
+/**
+ * This component is used as a RepoCard component, to show repo details
+ */
 const RepoCard = ({
   repoId,
   repoName,
@@ -22,6 +25,7 @@ const RepoCard = ({
   hasStarSupport,
   onStarClicked,
 }: RepoCardProps): ReactElement => {
+  // enable/disable starring based on props and if the repo have been already starred
   const [isStarAvailable, setStarAvailable] = useState(hasStarSupport);
   const handleRepoStared = useCallback(
     (ev) => {

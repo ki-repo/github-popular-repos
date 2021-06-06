@@ -13,10 +13,15 @@ import { RepoInfo } from 'src/apiCalls/repo';
 import { getLastWeekDateFormatted } from 'src/utils/utils';
 import Select from 'src/shared/components/Select/Select';
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
-
+/**
+ * This component is used for Showing popular repos
+ */
 const PopularRepos = (): ReactElement => {
+
   const lastWeeksDate = getLastWeekDateFormatted();
   const [availableRepos, setAvailableRepos] = useState([]);
+
+  // Fetch required data
   const { isLoading, isError, data } = useQuery(
     dataQuery.name,
     () => dataQuery.fn(lastWeeksDate),
@@ -26,6 +31,13 @@ const PopularRepos = (): ReactElement => {
     }
   );
 
+  // get repos or default from localstorage
+  const [starredItems, setStarredItems] = useLocalStorage<RepoInfo[]>(
+    'starred',
+    []
+  );
+
+  // Handle filter callback by filtering existing data
   const handleFilterRepoCallBack = useCallback(
     (language) => {
       setAvailableRepos(
@@ -39,11 +51,7 @@ const PopularRepos = (): ReactElement => {
     [setAvailableRepos, data]
   );
 
-  const [starredItems, setStarredItems] = useLocalStorage<RepoInfo[]>(
-    'starred',
-    []
-  );
-
+  // Handle starring callback by updating localstorage
   const handleStarRepoCallback = useCallback(
     (repo: RepoInfo) => {
       starredItems.push(repo);
@@ -52,6 +60,7 @@ const PopularRepos = (): ReactElement => {
     [starredItems, setStarredItems]
   );
 
+  // set repos when data is availabe
   useEffect(() => {
     setAvailableRepos(data);
   }, [data]);
@@ -64,10 +73,12 @@ const PopularRepos = (): ReactElement => {
     return <div>error</div>;
   }
 
+  // get list of languages and make a unique list out of them
   const languages: string[] = data
     .filter((repo: RepoInfo) => repo.language)
     .map((repo: RepoInfo) => repo.language);
   const availableLanguages: string[] = [...new Set(languages)];
+
   return (
     <Fragment>
       <h1>Popular Repos from {lastWeeksDate}</h1>

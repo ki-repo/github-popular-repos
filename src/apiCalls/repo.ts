@@ -9,6 +9,7 @@ export interface RepoInfo {
   language?: string;
 }
 
+// a function to make an api call and format reponse
 export const getLastWeekPopularRepos = async (filterDate: string): Promise<any> => {
   const data = await client(
     `https://api.github.com/search/repositories?q=created:%3E${filterDate}&sort=stars&order=desc`

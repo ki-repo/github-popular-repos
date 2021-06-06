@@ -7,6 +7,10 @@ interface SelectInputProps {
   currentSelection: string;
 }
 
+/**
+ * This component is used as a select component
+ * it can be imporved as now the options are used for both labels and values
+ */
 const Select = ({
   label,
   options,
@@ -16,6 +20,7 @@ const Select = ({
 }: SelectInputProps): ReactElement => {
   const [selecion, setSelection] = useState(currentSelection);
 
+  // handle selection change callback by propagating the event and setting the new selection value
   const handleSelectionChange = useCallback((ev) => {
     setSelection(ev.target.value);
     onChange(ev);
