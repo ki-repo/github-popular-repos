@@ -1,6 +1,7 @@
 {
   "name": "github-popular-repos",
   "version": "0.1.0",
+  "homepage": "https://ki-repo.github.io/github-popular-repos",
   "keywords": [
     "react",
     "popular",

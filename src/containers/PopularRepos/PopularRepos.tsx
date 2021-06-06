@@ -64,10 +64,10 @@ const PopularRepos = (): ReactElement => {
     return <div>error</div>;
   }
 
-  const availableLanguages: string[] = data
+  const languages: string[] = data
     .filter((repo: RepoInfo) => repo.language)
     .map((repo: RepoInfo) => repo.language);
-
+  const availableLanguages: string[] = [...new Set(languages)];
   return (
     <Fragment>
       <h1>Popular Repos from {lastWeeksDate}</h1>
