@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import { GlobalStyle, MainAppSt } from './App.css';
+import Header from './shared/components/Header/Header';
+
+const PopularReposPage = React.lazy(
+  () => import('./containers/PopularRepos/PopularRepos')
+);
+const StarredRepos = React.lazy(
+  () => import('./containers/StarredRepos/StarredRepos')
+);
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <GlobalStyle />
+      <Router>
+        <Header />
+        <MainAppSt>
+          <QueryClientProvider client={queryClient}>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route
+                  exact
+                  path="/popular"
+                  render={() => <PopularReposPage />}
+                />
+                <Route exact path="/stared" render={() => <StarredRepos />} />
+                <Redirect to="/popular" />
+              </Switch>
+            </Suspense>
+          </QueryClientProvider>
+        </MainAppSt>
+      </Router>
+    </React.Fragment>
   );
 }
 

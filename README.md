@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+## Project goal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Is to practice reactjs, through building an app to view popular github repos through one week ago [github public search api](https://api.github.com/search/repositories?q=created:%3E2017-01-10&sort=stars&order=desc)
 
-## Available Scripts
+### Visit App Homepage [Here](https://ki-repo/.github.io//github-popular-repos/)
 
-In the project directory, you can run:
+### Planned items:
 
-### `npm start`
+- [x] Top 30 Repos from 7 days ago.
+- [x] Starred Repos Page.
+- [x] Add support for Service worker for offline use (not fully untilized yet).
+- [x] To use React Query for data fetching, caching and updating data.
+- [x] Use React Hooks, lazy and Suspense APIs.
+- [x] Explore [styled components](https://styled-components.com/) as a CSS-in-js library.
+- [x] Configure unit, Integration and E2E tests.
+- [x] Autodeploy the app on github pages using github Actions.
+- [x] Enable running the app through docker image.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Run the app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. to install project dependencies
 
-### `npm test`
+```sh
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. to build the project
 
-### `npm run build`
+```sh
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. to start the server, then navigate to `localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+npm run start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Run Through Docker
 
-### `npm run eject`
+1. to build the image
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+docker build . -t react-docker
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. to run, then navigate to `localhost:8000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+docker run -p 8000:80 react-docker
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Project structure
 
-## Learn More
+```
+build/                      web app build
+src/                        project source code
+|  apiCalls/                Main app API call functions along with interfaces for payload and response
+|  containers/              Main app pages the represent core features
+|  shared/components        App UI components that doesn't have any bussiness logic
+|  shared/features          UI Components that depends on a feature and can be reused based on props
+|  hooks/                   Reusable hooks used within the app
+|  provides/                Set of provides that can be used within the app (currently there are none)
+|  utils/                   a set of helper functions to extend some base functionality
+|  styles/                  styles folder containing fonts and theme variables
+|  app.tsx                  Main Component for the web app
++- ...                      app configuration files
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Main tasks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Task automation is based on [NPM scripts](https://docs.npmjs.com/misc/scripts).
+
+| Task                   | Description                             |
+| ---------------------- | --------------------------------------- |
+| `npm run build`        | build app and export to `build` folder  |
+| `npm run start`        | Run server on `http://localhost:3000/`  |
+| `npm run test`         | run tests                               |
+| `npm run test:cypress` | run e2e tests                           |
+| `npm run predeploy`    | build app to publish it to github pages |
+| `npm run deploy`       | publish app to github pages             |
+
+# Secondary tasks
+
+Husky is used as a pre-commit hook to lint changes according to prettier rules after every commit.
+
+# Notes:
+
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
