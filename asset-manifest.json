@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.js": "/github-popular-repos/static/js/main.fc4fcef6.chunk.js",
-    "main.js.map": "/github-popular-repos/static/js/main.fc4fcef6.chunk.js.map",
-    "runtime-main.js": "/github-popular-repos/static/js/runtime-main.1b2b018f.js",
-    "runtime-main.js.map": "/github-popular-repos/static/js/runtime-main.1b2b018f.js.map",
+    "main.js": "/github-popular-repos/static/js/main.d056cea4.chunk.js",
+    "main.js.map": "/github-popular-repos/static/js/main.d056cea4.chunk.js.map",
+    "runtime-main.js": "/github-popular-repos/static/js/runtime-main.ea56e9f8.js",
+    "runtime-main.js.map": "/github-popular-repos/static/js/runtime-main.ea56e9f8.js.map",
     "static/js/2.538421ca.chunk.js": "/github-popular-repos/static/js/2.538421ca.chunk.js",
     "static/js/2.538421ca.chunk.js.map": "/github-popular-repos/static/js/2.538421ca.chunk.js.map",
     "static/js/3.6e8f11cd.chunk.js": "/github-popular-repos/static/js/3.6e8f11cd.chunk.js",
     "static/js/3.6e8f11cd.chunk.js.map": "/github-popular-repos/static/js/3.6e8f11cd.chunk.js.map",
-    "static/js/4.6559e9d0.chunk.js": "/github-popular-repos/static/js/4.6559e9d0.chunk.js",
-    "static/js/4.6559e9d0.chunk.js.map": "/github-popular-repos/static/js/4.6559e9d0.chunk.js.map",
-    "static/js/5.b2bee185.chunk.js": "/github-popular-repos/static/js/5.b2bee185.chunk.js",
-    "static/js/5.b2bee185.chunk.js.map": "/github-popular-repos/static/js/5.b2bee185.chunk.js.map",
+    "static/js/4.bed7cb68.chunk.js": "/github-popular-repos/static/js/4.bed7cb68.chunk.js",
+    "static/js/4.bed7cb68.chunk.js.map": "/github-popular-repos/static/js/4.bed7cb68.chunk.js.map",
+    "static/js/5.ed2f0b23.chunk.js": "/github-popular-repos/static/js/5.ed2f0b23.chunk.js",
+    "static/js/5.ed2f0b23.chunk.js.map": "/github-popular-repos/static/js/5.ed2f0b23.chunk.js.map",
     "static/js/6.24f8c6cd.chunk.js": "/github-popular-repos/static/js/6.24f8c6cd.chunk.js",
     "static/js/6.24f8c6cd.chunk.js.map": "/github-popular-repos/static/js/6.24f8c6cd.chunk.js.map",
     "index.html": "/github-popular-repos/index.html",
     "static/js/2.538421ca.chunk.js.LICENSE.txt": "/github-popular-repos/static/js/2.538421ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1b2b018f.js",
+    "static/js/runtime-main.ea56e9f8.js",
     "static/js/2.538421ca.chunk.js",
-    "static/js/main.fc4fcef6.chunk.js"
+    "static/js/main.d056cea4.chunk.js"
   ]
 }
