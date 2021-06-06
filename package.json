@@ -9,6 +9,16 @@
   ],
   "private": true,
   "license": "ISC",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --runInBand --watchAll=false",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test:cypress": "cypress open"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -29,11 +39,15 @@
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
+    "@cypress/react": "^5.9.1",
+    "@cypress/webpack-dev-server": "^1.3.1",
+    "@testing-library/react-hooks": "^7.0.0",
     "@types/enzyme": "3.10.8",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "autoprefixer": "^9.8.6",
+    "cypress": "^7.4.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "enzyme-to-json": "3.6.2",
@@ -42,16 +56,8 @@
     "lint-staged": "^11.0.0",
     "postcss": "^7.0.35",
     "prettier": "^2.3.1",
+    "react-test-renderer": "^17.0.2",
     "ts-jest": "27.0.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage --runInBand --watchAll=false",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
